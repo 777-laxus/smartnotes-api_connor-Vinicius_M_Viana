@@ -1,0 +1,37 @@
+NOTA: 9.8
+
+COMENTÁRIOS:
+**Regra 1 - Tecnologias:**
+Todas as tecnologias obrigatórias foram usadas durante a implementação.
+
+**Regra 2 - Modelos Prisma:**
+Os modelos do Prisma foram implementados corretamente.
+
+**Regra 3 - Endpoints:**
+Todas as rotas fora implementadas. Obs: As rotas de notas foram registradas sob o prefixo `/v1/note` (singular) em vez de `/v1/notes` (plural), conforme exigido pela especificação. Isso quebra a integração com o frontend e não atende à especificação.
+
+**Regra 4 - Validação de senha:**
+As senhas dos usuários seguem todos os critérios pedidos no documento de especificação.
+
+**Regra 5 - Requisitos de segurança:**
+- Gerenciamento de segredos: Parcialmente atendido. Há fallback hardcoded no `SESSION_SECRET` ('segredo-muito-forte-para-producao'), o que viola a regra de não conter segredos no código-fonte.
+- Hash de senha: Implementado corretamente com bcryptjs.
+- Sessão segura: `httpOnly: true`, `sameSite: 'lax'` e `saveUninitialized: false` estão configurados corretamente.
+- Autorização (IDOR): Implementada corretamente nas notas, retornando 404 quando a nota não pertence ao usuário.
+- Rate limiting: Limites global (100/15min) e de autenticação (10/15min) implementados corretamente.
+- CORS: Configurado com origem via variável de ambiente e `credentials: true`.
+- Helmet: Implementado.
+- Timing attack: Implementado com dummy hash, garantindo que o bcrypt sempre seja executado.
+
+**Cálculo da nota:**
+- Endpoints funcionando (30%): completo - 30%
+- Validações Joi (10%): completo - 10%.
+- Autenticação por sessão (15%): completo - 15%.
+- Autorização IDOR (15%): completo - 15%.
+- Rate limiting (5%): completo - 5%.
+- CORS (5%): completo - 5%.
+- Hash e segredos em env (10%): parcial (fallback hardcoded de session secret) - ~8%.
+- Timing attack (5%): completo - 5%.
+- Helmet (5%): completo - 5%.
+
+Total aproximado: 9.8

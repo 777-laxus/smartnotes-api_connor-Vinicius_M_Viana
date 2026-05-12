@@ -8,7 +8,7 @@ Todas as tecnologias obrigatórias foram usadas durante a implementação.
 Os modelos do Prisma foram implementados corretamente.
 
 **Regra 3 - Endpoints:**
-Todas as rotas fora implementadas. Obs: As rotas de notas foram registradas sob o prefixo `/v1/note` (singular) em vez de `/v1/notes` (plural), conforme exigido pela especificação. Isso quebra a integração com o frontend e não atende à especificação.
+Todas as rotas da API foram implementadas. Observação: as rotas de notas foram registradas sob o prefixo `/v1/note` (singular) em vez de `/v1/notes` (plural) conforme exigido pela especificação, o que pode quebrar a integração com o frontend.
 
 **Regra 4 - Validação de senha:**
 As senhas dos usuários seguem todos os critérios pedidos no documento de especificação.
@@ -25,13 +25,13 @@ As senhas dos usuários seguem todos os critérios pedidos no documento de espec
 
 **Cálculo da nota:**
 - Endpoints funcionando (30%): completo - 30%
-- Validações Joi (10%): completo - 10%.
-- Autenticação por sessão (15%): completo - 15%.
-- Autorização IDOR (15%): completo - 15%.
-- Rate limiting (5%): completo - 5%.
-- CORS (5%): completo - 5%.
-- Hash e segredos em env (10%): parcial (fallback hardcoded de session secret) - ~8%.
-- Timing attack (5%): completo - 5%.
-- Helmet (5%): completo - 5%.
+- Validações Joi (10%): completo - 10%
+- Autenticação por sessão (15%): completo - 15%
+- Autorização IDOR (15%): completo - 15%
+- Rate limiting (5%): completo - 5%
+- CORS (5%): completo - 5%
+- Hash e segredos em env (10%): parcial (fallback hardcoded de session secret) - ~8%
+- Timing attack (5%): completo - 5%
+- Helmet (5%): completo - 5%
 
 Total aproximado: 9.8
